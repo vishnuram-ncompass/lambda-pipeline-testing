@@ -13,5 +13,5 @@ phases:
 
 artifacts:
   files:
-    - .aws-sam/**/*
-    - template.yaml
+    - '**/*'
+  base-directory: .aws-sam/build
