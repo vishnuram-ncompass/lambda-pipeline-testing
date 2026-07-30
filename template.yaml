@@ -1,0 +1,37 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: An AWS Serverless Application Model (SAM) template describing your function.
+Resources:
+   vishnuramchatsendmessage:
+      Type: AWS::Serverless::Function
+      Properties:
+         Architectures:
+            - x86_64
+         CodeUri: ./src
+         Description: ''
+         Environment:
+            Variables:
+               CONNECTIONS_TABLE: vishnuram-chat-connections
+         EphemeralStorage:
+            Size: 512
+         Handler: index.handler
+         LoggingConfig:
+            LogFormat: Text
+            LogGroup: /aws/lambda/vishnuram-chat-sendmessage
+         MemorySize: 128
+         PackageType: Zip
+         RecursiveLoop: Terminate
+         Runtime: nodejs24.x
+         RuntimeManagementConfig:
+            UpdateRuntimeOn: Auto
+         SnapStart:
+            ApplyOn: None
+         Tags: {}
+         Timeout: 10
+         Tracing: PassThrough
+         Events:
+            Trigger1Event:
+               Type: HttpApi
+               Properties:
+                  Method: ANY
+                  Path: /MyResource
