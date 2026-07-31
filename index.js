@@ -5,6 +5,7 @@ const { ApiGatewayManagementApiClient, PostToConnectionCommand } = require("@aws
 const ddbClient = new DynamoDBClient({ region: "ap-south-1" });
 const ddb = DynamoDBDocumentClient.from(ddbClient);
 
+
 const TABLE_NAME = process.env.CONNECTIONS_TABLE || "vishnuram-chat-connections";
 
 exports.handler = async (event) => {
