@@ -2,14 +2,8 @@
   "name": "vishnuram-chat-sendmessage",
   "version": "1.0.0",
   "dependencies": {
-<<<<<<< HEAD
     "@aws-sdk/client-dynamodb": "^3.600.0",
     "@aws-sdk/lib-dynamodb": "^3.600.0",
     "@aws-sdk/client-apigatewaymanagementapi": "^3.600.0"
-=======
-    "@aws-sdk/client-dynamodb" : "^3.600.0",
-    "@aws-sdk/lib-dynamodb" : "^3.600.0",
-    "@aws-sdk/client-apigatewaymanagementapi" : "^3.600.0"
->>>>>>> dee63699f06faf2bf0fa2f3bb5fda07e21231823
   }
 }
