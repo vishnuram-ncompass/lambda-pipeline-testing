@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+   install:
+      runtime-versions:
+         nodejs: 24
+   build:
+      commands:
+         - echo "Installing dependencies"
+         - npm install --production
+
+         - echo "Packaging sendMessage function"
+         - zip -r sendMessage.zip . -x "*.git*" -x "template.yaml"
+
+         - echo "Deploying to vishnuram-chat-sendmessage"
+         - aws lambda update-function-code --function-name vishnuram-chat-sendmessage --zip-file fileb://sendMessage.zip --region ap-south-1
+
+         - echo "Deployment complete"
